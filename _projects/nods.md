@@ -2,6 +2,7 @@
 layout: page
 title: NODS — New Object Discovery System
 description: Lean 4 + Mathlib 形式化「通过最小一致扩张发现新数学对象」——开方 ≠ 幂的证明。
+github: https://github.com/logos-42/NODS
 img:
 importance: 4
 category: work

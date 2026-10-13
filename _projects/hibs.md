@@ -2,6 +2,7 @@
 layout: page
 title: HIBS — Hidden-space Bridge System 三公理体系
 description: 隐数三公理连接实数与虚数；代数涌现物理在 Lean 4 中形式化（不含 mathlib 的核心证明）。
+github: https://github.com/logos-42/Hibs-Physics
 img:
 importance: 5
 category: work

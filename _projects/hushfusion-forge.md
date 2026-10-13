@@ -2,6 +2,7 @@
 layout: page
 title: HUSHFUSION Forge — 聚变电磁线圈设计闭环
 description: 电磁线圈设计的自动搜索 / 评分 / 记录 / 学习闭环，Go 主栈 + 独立 Python 复核层。
+github: https://github.com/logos-42/hushfusion-forge
 img:
 importance: 3
 category: work

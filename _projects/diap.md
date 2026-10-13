@@ -2,6 +2,7 @@
 layout: page
 title: DIAP — Decentralized Agent Identity Protocol
 description: 零知识证明 + 混合 P2P 栈的去中心化智能体身份协议，预言机驱动认证。已发表 arXiv 论文。
+github: https://github.com/logos-42/DIAP_TS_SDK
 img:
 importance: 1
 category: work

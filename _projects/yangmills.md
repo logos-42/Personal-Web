@@ -2,6 +2,7 @@
 layout: page
 title: Yang–Mills 猜想在流动空间规范理论中的形式化
 description: 质量间隙 = 整数算术定理，规范自相互作用 = 几何定理。Lean 4 验证，零 sorry。
+github: https://github.com/logos-42/YangMillsPhysics
 img:
 importance: 6
 category: work

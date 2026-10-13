@@ -2,6 +2,7 @@
 layout: page
 title: bolloon — 去中心化智能体资源交流网络
 description: 智能体资源交流网络：DID 解析、社交心跳、P2P 自动聊天。跨机部署已跑通。
+github: https://github.com/logos-42/bolloon
 img:
 importance: 2
 category: work
