@@ -33,3 +33,4 @@ jobs:
           folder: _site
           branch: gh-pages
           clean: true
+          jekyll: false
