@@ -2,7 +2,8 @@
 layout: about
 title: About
 permalink: /
-subtitle: 可控核聚变 · 智能体研究 · 数学推动 — Controlled fusion · Agent research · Mathematics
+subtitle_zh: 可控核聚变 · 智能体研究 · 数学推动
+subtitle_en: Controlled fusion · Agent research · Mathematics
 
 profile:
   align: right
