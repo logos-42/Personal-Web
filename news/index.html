@@ -23,7 +23,16 @@
                     apply(document.documentElement.lang === "zh" ? "en" : "zh");
                   });
                 }
-                apply(lang);
+                function init() {
+                  apply(lang);
+                  // re-apply after dynamic content is fully parsed
+                  if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", function () {
+                      apply(document.documentElement.lang);
+                    });
+                  }
+                }
+                init();
               })();
             </script> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">News</h1> <p class="post-description"></p> </header> <article> <div class="news"> <div class="table-responsive"> <table class="table table-sm table-borderless"> <tr> <th scope="row" style="width: 20%">Oct 13, 2026</th> <td> ⚛️ 可控核聚变 Fusion 项目进行中 — <em>Working on the controlled-fusion Fusion project.</em> </td> </tr> <tr> <th scope="row" style="width: 20%">Oct 13, 2026</th> <td> 📱 智能体软件包：让一万个智能体进入人类的手机，进入你的生活 — <em>A package to put ten thousand agents into your phone.</em> </td> </tr> <tr> <th scope="row" style="width: 20%">Oct 13, 2026</th> <td> 📖 出版了一本书：《判断力与复利》— <em>Published “Judgment &amp; Compounding”.</em> </td> </tr> <tr> <th scope="row" style="width: 20%">Oct 13, 2026</th> <td> 🎙️ 我的播客已发布 — <em>My podcast is out.</em> </td> </tr> <tr> <th scope="row" style="width: 20%">Oct 13, 2026</th> <td> 个人主页以 al-folio 重建上线 — 学术档案化设计：<a href="/">About</a>、<a href="/research/">Research</a>、<a href="/publications/">Publications</a>、<a href="/projects/">Projects</a>、<a href="/notes/">Notes</a>、<a href="/cv/">CV</a>。 </td> </tr> <tr> <th scope="row" style="width: 20%">Oct 08, 2026</th> <td> <em>Counting, Not Confinement: The Yang–Mills Conjecture in the Flowing-Space Gauge Theory</em> 发布于 <a href="https://aixiv.science/papers/aixiv.261008.000006" rel="external nofollow noopener" target="_blank">aiXiv</a> — 质量间隙成为整数算术定理，Lean 4 验证零 sorry。 </td> </tr> </table> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Leonard 刘元杰. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: October 13, 2026. </div> </footer> <script>
   window.alFolio = {

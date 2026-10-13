@@ -23,7 +23,16 @@
                     apply(document.documentElement.lang === "zh" ? "en" : "zh");
                   });
                 }
-                apply(lang);
+                function init() {
+                  apply(lang);
+                  // re-apply after dynamic content is fully parsed
+                  if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", function () {
+                      apply(document.documentElement.lang);
+                    });
+                  }
+                }
+                init();
               })();
             </script> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Announcement_4</h1> <p class="post-meta"> Created on October 13, 2026 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </p> </header> <article class="post-content"> <div id="markdown-content"> <p>📖 出版了一本书：《判断力与复利》— <em>Published “Judgment &amp; Compounding”.</em></p> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Leonard 刘元杰. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: October 13, 2026. </div> </footer> <script>
   window.alFolio = {

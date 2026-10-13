@@ -23,7 +23,16 @@
                     apply(document.documentElement.lang === "zh" ? "en" : "zh");
                   });
                 }
-                apply(lang);
+                function init() {
+                  apply(lang);
+                  // re-apply after dynamic content is fully parsed
+                  if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", function () {
+                      apply(document.documentElement.lang);
+                    });
+                  }
+                }
+                init();
               })();
             </script> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">DIAP — Decentralized Agent Identity Protocol</h1> <p class="post-description">零知识证明 + 混合 P2P 栈的去中心化智能体身份协议，预言机驱动认证。已发表 arXiv 论文。</p> </header> <article> <p><strong>DIAP</strong>（Decentralized Interstitial Agent Protocol）：让任意两个智能体无需中心化信任锚点即可完成去中心化身份验证与通信的协议。</p> <ul> <li> <strong>核心机制</strong>：零知识证明 + 混合 P2P 栈 + 预言机驱动的身份认证与信任机制</li> <li> <strong>论文</strong>：<a href="https://arxiv.org/abs/2511.11619" rel="external nofollow noopener" target="_blank">arXiv:2511.11619</a> — <em>DIAP: A Decentralized Agent Identity Protocol with Zero-Knowledge Proofs and a Hybrid P2P Stack</em> </li> <li> <strong>代码</strong>：<a href="https://github.com/logos-42/DIAP_TS_SDK" rel="external nofollow noopener" target="_blank">DIAP_TS_SDK</a>（TypeScript）· <a href="https://github.com/logos-42/DIAP_Python_SDK" rel="external nofollow noopener" target="_blank">DIAP_Python_SDK</a> · <a href="https://github.com/logos-42/DIAP_Rust_SDK" rel="external nofollow noopener" target="_blank">DIAP_Rust_SDK</a> </li> <li> <strong>生态</strong>：DIAP-DAO（<a href="https://github.com/logos-42/Alou-DAO" rel="external nofollow noopener" target="_blank">Alou-DAO</a>）、多智能体预言机（<a href="https://github.com/logos-42/MultiAgentOracle" rel="external nofollow noopener" target="_blank">MultiAgentOracle</a>——只验证智能体逻辑、不验证数据的因果指纹机制）</li> </ul> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Leonard 刘元杰. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: October 13, 2026. </div> </footer> <script>
   window.alFolio = {

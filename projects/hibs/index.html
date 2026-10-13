@@ -23,7 +23,16 @@
                     apply(document.documentElement.lang === "zh" ? "en" : "zh");
                   });
                 }
-                apply(lang);
+                function init() {
+                  apply(lang);
+                  // re-apply after dynamic content is fully parsed
+                  if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", function () {
+                      apply(document.documentElement.lang);
+                    });
+                  }
+                }
+                init();
               })();
             </script> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">HIBS — Hidden-space Bridge System 三公理体系</h1> <p class="post-description">隐数三公理连接实数与虚数；代数涌现物理在 Lean 4 中形式化（不含 mathlib 的核心证明）。</p> </header> <article> <p><strong>HIBS</strong>（Hidden-space Bridge System）：三个公理连接实数与虚数——把「桥」写成代数结构，让物理作为代数的表示涌现。</p> <ul> <li> <strong>三公理</strong>：表示完备性（Representation Completeness）与核零（Kernel Null）</li> <li> <strong>论文</strong>：<em>The Hidden-space Bridge System</em>（<a href="https://aixiv.science/papers/aixiv.260826.000001" rel="external nofollow noopener" target="_blank">aiXiv:260826.000001</a>）· <em>Riemann Zeta in Hidden-Number Coordinates</em>（<a href="https://aixiv.science/papers/aixiv.260827.000002" rel="external nofollow noopener" target="_blank">aiXiv:260827.000002</a>）</li> <li> <strong>形式化</strong>：<a href="https://github.com/logos-42/Hibs-Physics" rel="external nofollow noopener" target="_blank">Hibs-Physics</a>（Lean 4，核心无 mathlib）· <a href="https://github.com/logos-42/lean" rel="external nofollow noopener" target="_blank">RIBS</a>（隐数运算法则）</li> <li> <strong>量化</strong>：<a href="https://github.com/logos-42/MT5-hibs" rel="external nofollow noopener" target="_blank">MT5-hibs</a>（HIBS 策略）</li> </ul> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Leonard 刘元杰. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: October 13, 2026. </div> </footer> <script>
   window.alFolio = {

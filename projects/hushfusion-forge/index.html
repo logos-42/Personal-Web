@@ -23,7 +23,16 @@
                     apply(document.documentElement.lang === "zh" ? "en" : "zh");
                   });
                 }
-                apply(lang);
+                function init() {
+                  apply(lang);
+                  // re-apply after dynamic content is fully parsed
+                  if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", function () {
+                      apply(document.documentElement.lang);
+                    });
+                  }
+                }
+                init();
               })();
             </script> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">HUSHFUSION Forge — 聚变电磁线圈设计闭环</h1> <p class="post-description">电磁线圈设计的自动搜索 / 评分 / 记录 / 学习闭环，Go 主栈 + 独立 Python 复核层。</p> </header> <article> <p><strong>HUSHFUSION Forge</strong>：用「消音计划」的思路做聚变工程——通过电磁线圈设计闭环逼近受控聚变。</p> <ul> <li> <strong>闭环</strong>：自动搜索 → 评分 → 记录 → 学习（Go 主栈 + 独立 Python 复核层）</li> <li> <strong>相关</strong>：<a href="https://github.com/logos-42/fusion-sim" rel="external nofollow noopener" target="_blank">fusion-sim</a>——聚变数字仿真工作台（TORAX / Gym-TORAX 跑通 + gym-μ-FRC：μ 动力学 × FRC 窗口 × Gymnasium 环境，含门禁）</li> <li> <strong>品牌</strong>：<a href="https://github.com/logos-42/HushFusion" rel="external nofollow noopener" target="_blank">HushFusion</a>——零构建静态品牌站 <em>Controlled Fusion Through the Silence</em>（四页）</li> <li> <strong>代码</strong>：<a href="https://github.com/logos-42/hushfusion-forge" rel="external nofollow noopener" target="_blank">hushfusion-forge</a> </li> </ul> <p>目标：让电磁设计从「手工迭代」变成「算法驱动的可学习闭环」。</p> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Leonard 刘元杰. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: October 13, 2026. </div> </footer> <script>
   window.alFolio = {

@@ -23,7 +23,16 @@
                     apply(document.documentElement.lang === "zh" ? "en" : "zh");
                   });
                 }
-                apply(lang);
+                function init() {
+                  apply(lang);
+                  // re-apply after dynamic content is fully parsed
+                  if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", function () {
+                      apply(document.documentElement.lang);
+                    });
+                  }
+                }
+                init();
               })();
             </script> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Yang–Mills 猜想在流动空间规范理论中的形式化</h1> <p class="post-description">质量间隙 = 整数算术定理，规范自相互作用 = 几何定理。Lean 4 验证，零 sorry。</p> </header> <article> <p><strong>Yang–Mills 质量间隙猜想</strong>在流动空间规范理论中成为定理——并且每一步都由 Lean 4 机器验证（零 sorry）。</p> <ul> <li> <strong>质量间隙</strong>：成为整数算术定理——电子–光子跃迁是跨过空区间 (0, M₀²) 的整数跳变（m²(N) = N·M₀²）</li> <li> <strong>自相互作用</strong>：成为几何定理——带上计数属性的汇收缩在相异点不交换，精确对易子 λ²(v_q − v_p)</li> <li> <strong>论文</strong>：<em>Counting, Not Confinement</em>（<a href="https://aixiv.science/papers/aixiv.261008.000006" rel="external nofollow noopener" target="_blank">aiXiv:261008.000006</a>）</li> <li> <strong>代码</strong>：<a href="https://github.com/logos-42/YangMillsPhysics" rel="external nofollow noopener" target="_blank">YangMillsPhysics</a>——Lean 4 形式化，零 sorry</li> <li> <strong>姊妹篇</strong>：<em>The Sink Is a Flattening</em>（<a href="https://aixiv.science/papers/aixiv.261007.000005" rel="external nofollow noopener" target="_blank">aiXiv:261007.000005</a>，电荷、反引力与光子的汇几何）</li> </ul> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Leonard 刘元杰. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: October 13, 2026. </div> </footer> <script>
   window.alFolio = {

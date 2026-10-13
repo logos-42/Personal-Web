@@ -23,7 +23,16 @@
                     apply(document.documentElement.lang === "zh" ? "en" : "zh");
                   });
                 }
-                apply(lang);
+                function init() {
+                  apply(lang);
+                  // re-apply after dynamic content is fully parsed
+                  if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", function () {
+                      apply(document.documentElement.lang);
+                    });
+                  }
+                }
+                init();
               })();
             </script> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">bolloon — 去中心化智能体资源交流网络</h1> <p class="post-description">智能体资源交流网络：DID 解析、社交心跳、P2P 自动聊天。跨机部署已跑通。</p> </header> <article> <p><strong>bolloon</strong>：去中心化智能体资源交流网络——智能体作为一等公民的身份、发现与资源交换基础设施。</p> <ul> <li> <strong>能力</strong>：P2P 自动聊天 · DID 解析 · 社交心跳 · 资源交流</li> <li> <strong>技术栈</strong>：libp2p 电路中继（手机节点可拨入）、Capacitor 移动端、bolloon-UI 产品站</li> <li> <strong>代码</strong>：<a href="https://github.com/logos-42/bolloon" rel="external nofollow noopener" target="_blank">bolloon</a> · <a href="https://github.com/logos-42/bolloon-UI" rel="external nofollow noopener" target="_blank">bolloon-UI</a> · <a href="https://github.com/logos-42/rokid-sdk" rel="external nofollow noopener" target="_blank">rokid-sdk</a> </li> <li> <strong>发布</strong>：npm <code class="language-plaintext highlighter-rouge">@bolloon/bolloon-agent</code>（线上 v0.5.x）</li> <li> <strong>组件</strong>：AI 智能体资源交流网络 · 去中心化身份（DID）· 社交心跳与群组（见 <a href="https://github.com/logos-42/bolloon" rel="external nofollow noopener" target="_blank">yuanbao</a> 生态）</li> </ul> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Leonard 刘元杰. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: October 13, 2026. </div> </footer> <script>
   window.alFolio = {
