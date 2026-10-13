@@ -2,7 +2,7 @@
 
 https://logos-42.github.io
 
-独立研究者 leo（刘元杰）的个人学术档案：数学物理与形式化验证、脑启发 AI、去中心化智能体协议。
+独立研究者 Leonard（刘元杰）的个人学术档案：数学物理与形式化验证、脑启发 AI、去中心化智能体协议。
 
 基于 [al-folio](https://github.com/alshedivat/al-folio)（v1.x, Jekyll）构建，深度去模板化定制（Editorial 配色、真实论文与项目、中文/英文双语内容）。
 

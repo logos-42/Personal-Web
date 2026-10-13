@@ -2,9 +2,9 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: leo # the website title (if blank, full name will be used instead)
-first_name: leo
-middle_name: 
+title: Leonard # the website title (if blank, full name will be used instead)
+first_name: Leonard
+middle_name:
 last_name: 刘元杰
 contact_note: >
   多智能体系统 · 去中心化协议 · AI 原型设计。

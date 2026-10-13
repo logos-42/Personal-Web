@@ -3,6 +3,9 @@
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
 cv_pdf: /assets/pdf/resume.pdf # path to your CV PDF file
 email: yuanjieliu65@gmail.com # your email address
-github: logos-42
+github_username: logos-42
+orcid_id: 0009-0007-4845-641X
+x_username: canopylist
+mastodon_username: logosleo@mastodon.social
 rss_icon: true # comment this line to hide the RSS icon
 # wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
