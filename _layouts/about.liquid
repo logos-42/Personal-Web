@@ -27,23 +27,20 @@ layout: default
         function type(text, done) {
           if (timer) clearInterval(timer);
           el.textContent = "";
+          el.classList.remove("typed");
           var i = 0;
           timer = setInterval(function () {
             el.textContent = text.slice(0, ++i);
             if (i >= text.length) {
               clearInterval(timer);
               timer = null;
+              el.classList.add("typed");
               if (done) done();
             }
           }, 45);
         }
         function run() {
-          var t = current();
-          // blink caret while typing, steady when done
-          if (caret) caret.style.animation = "none";
-          type(t, function () {
-            if (caret) caret.style.animation = "";
-          });
+          type(current(), function () {});
         }
         // initial
         run();
@@ -60,6 +57,7 @@ layout: default
     </script>
     <style>
       #typewriter { display: inline-block; }
+      #typewriter.typed { color: var(--global-theme-color); }
       #tw-caret {
         display: inline-block;
         margin-left: 2px;
