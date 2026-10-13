@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: 多智能体系统 · 去中心化协议 · AI 原型设计 — Multi-agent systems · decentralized protocols · AI prototyping
 

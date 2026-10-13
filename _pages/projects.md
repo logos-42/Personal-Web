@@ -1,6 +1,6 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
 description: 真正完成的研究项目 — 目标、方法与仓库。
 nav: true
