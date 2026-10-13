@@ -7,7 +7,7 @@ nav: true
 nav_order: 2
 ---
 
-<div data-lang="zh">
+<div data-lang="zh" markdown="1">
 
 ## 1. 可控核聚变 — Controlled Fusion
 
@@ -69,7 +69,7 @@ nav_order: 2
 
 </div>
 
-<div data-lang="en">
+<div data-lang="en" markdown="1">
 
 ## 1. Controlled Fusion
 

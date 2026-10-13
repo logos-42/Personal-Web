@@ -27,7 +27,7 @@ latest_posts:
   limit: 3
 ---
 
-<div data-lang="zh">
+<div data-lang="zh" markdown="1">
 
 我是 **Leonard（刘元杰）**，一名独立研究者。主要业务：**可控核聚变、智能体研究，以及一些数学的推动**。我也研究**持力学性模型**。
 
@@ -53,7 +53,7 @@ latest_posts:
 
 </div>
 
-<div data-lang="en">
+<div data-lang="en" markdown="1">
 
 I am **Leonard (Yuanjie Liu)**, an independent researcher. My main lines of work: **controlled fusion, agent research, and advancing mathematics**. I also study **force-sustaining models**.
 
