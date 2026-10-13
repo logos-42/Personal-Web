@@ -1,0 +1,13 @@
+github_users:
+  - logos-42
+
+repo_description_lines_max: 2
+
+github_repos:
+  - logos-42/bolloon
+  - logos-42/hushfusion-forge
+  - logos-42/NODS
+  - logos-42/Hibs-Physics
+  - logos-42/Sink-Physics
+  - logos-42/YangMillsPhysics
+  - logos-42/headless

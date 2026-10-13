@@ -1,0 +1,147 @@
+cv:
+  name: leo 刘元杰 (Liu Yuanjie)
+  label: Independent researcher — Multi-agent systems · Decentralized protocols · AI prototyping
+  email: yuanjieliu65@gmail.com
+  location: Hangzhou, China
+  image: ""
+  summary: >
+    Independent researcher at the intersection of mathematical physics, formal verification, and
+    brain-inspired AI: re-describing physics from a minimal set of axioms, machine-checking every
+    theorem in Lean 4, and building decentralized agent protocols (DIAP, bolloon).
+
+  social_networks:
+    - network: GitHub
+      username: logos-42
+
+  sections:
+    Education:
+      - institution: Tianjin University of Commerce (天津商业大学)
+        location: Tianjin, China
+        area: Automation & Artificial Intelligence
+        studyType: Bachelor of Engineering
+        start_date: 2020-09-01
+        end_date: 2024-06-30
+        highlights:
+          - 自动化信息工程学院 · 自动化与人工智能方向 (School of Automation & Information Engineering)
+          - 课程：线性代数、概率统计、数理逻辑、系统架构
+
+    Experience:
+      - company: Zhejiang Binjiang Research Institute (浙江滨江研究院)
+        position: Research Assistant / Research Engineer — AI & Systems
+        location: Hangzhou, China
+        start_date: 2025-08-01
+        end_date: 2026-05-31
+        summary: 参与多智能体系统与分布式计算课题研究；负责协议机制建模与仿真实验，大模型及智能体性能评估；协助撰写研究报告与技术文档。
+        highlights:
+          - Multi-agent systems & distributed computing research
+          - Protocol mechanism modeling and simulation experiments
+          - LLM and agent performance evaluation
+
+      - company: Independent Research (GAP)
+        position: Independent Researcher / Engineer
+        location: Hangzhou, China
+        start_date: 2024-07-01
+        end_date: 2025-08-31
+        summary: 独立开展 AI 智能体与去中心化协议的产品与技术探索；设计并实现多智能体协作原型、代币激励机制与去中心化算力调度系统；负责产品规划、系统架构设计与核心代码实现。
+        highlights:
+          - Multi-agent collaboration prototypes and token incentive mechanisms
+          - Decentralized compute scheduling with federated parameter exchange
+
+    Projects:
+      - name: "DIAP — Decentralized Agent Identity Protocol"
+        summary: 零知识证明 + 混合 P2P 栈的去中心化智能体身份协议；预言机驱动身份认证与信任机制。
+        highlights:
+          - "arXiv:2511.11619"
+        start_date: 2025-01-01
+
+      - name: bolloon — 去中心化智能体资源交流网络
+        summary: 智能体资源交流网络：DID 解析、社交心跳、P2P 自动聊天；跨机部署跑通。
+
+      - name: Unified Geometry of Physics
+        summary: 流动空间第一性原理：质量 = 位移条数 (m = √N·M₀)，ħ = 每弧度角动量，光子 = 激发电子螺旋。Lean 4 形式化，零 sorry。
+
+      - name: Brain-inspired Continual Learning (OaK)
+        summary: 丘脑门控 + 基底神经节选择 + 海马体重放的三系统架构；V25.5 cf_acc 1.9% → 32.2%。
+
+    Publications:
+      - title: "DIAP: A Decentralized Agent Identity Protocol with Zero-Knowledge Proofs and a Hybrid P2P Stack"
+        authors:
+          - Yuanjie Liu
+        publisher: "arXiv:2511.11619"
+        releaseDate: 2025-11-18
+        url: https://arxiv.org/abs/2511.11619
+
+      - title: "Counting, Not Confinement: The Yang–Mills Conjecture in the Flowing-Space Gauge Theory"
+        authors:
+          - Yuanjie Liu
+        publisher: "aiXiv:261008.000006"
+        releaseDate: 2026-10-08
+        url: https://aixiv.science/papers/aixiv.261008.000006
+
+      - title: "The Sink Is a Flattening: Charge, Antigravity, and the Photon in Flowing Space"
+        authors:
+          - Yuanjie Liu
+        publisher: "aiXiv:261007.000005"
+        releaseDate: 2026-10-07
+        url: https://aixiv.science/papers/aixiv.261007.000005
+
+      - title: "The radical as a forced structure: how to split powers from radicals"
+        authors:
+          - Yuanjie Liu
+        publisher: "aiXiv:260907.000001"
+        releaseDate: 2026-09-07
+        url: https://aixiv.science/papers/aixiv.260907.000001
+
+      - title: "The Riemann Zeta Function in Hidden-Number Coordinates"
+        authors:
+          - Yuanjie Liu
+        publisher: "aiXiv:260827.000002"
+        releaseDate: 2026-08-27
+        url: https://aixiv.science/papers/aixiv.260827.000002
+
+      - title: "The Hidden-space Bridge System: A Three-axiom Foundation Connecting the Real and Imaginary Numbers"
+        authors:
+          - Yuanjie Liu
+        publisher: "aiXiv:260826.000001"
+        releaseDate: 2026-08-26
+        url: https://aixiv.science/papers/aixiv.260826.000001
+
+      - title: "The Geometric Description of Physics at the Cosmic Scale: Mass, Information, Causality, Force"
+        authors:
+          - Yuanjie Liu
+        publisher: "aiXiv:260821.000002"
+        releaseDate: 2026-08-21
+        url: https://aixiv.science/papers/aixiv.260821.000002
+
+    Skills:
+      - name: Mathematics
+        level: Advanced
+        icon: fa-solid fa-hashtag
+        keywords: "线性代数 Linear Algebra, 概率统计 Probability & Statistics, 数理逻辑 Mathematical Logic"
+
+      - name: Computer Science
+        level: Advanced
+        icon: fa-solid fa-code
+        keywords: "分布式系统 Distributed Systems, 智能体协议 Agent Protocols, 系统架构 System Architecture, Rust, Python, PyTorch"
+
+      - name: AI Tooling
+        level: Advanced
+        icon: fa-solid fa-robot
+        keywords: "Claude Code, Cursor, Copilot, Kilo Code, LLM 微调与提示词工程"
+
+      - name: Agent Engineering
+        level: Advanced
+        icon: fa-solid fa-diagram-project
+        keywords: "Harness 架构, 多智能体协作协议, 任务调度, 多智能体系统设计"
+
+    Languages:
+      - name: Chinese
+        summary: "Native (母语)"
+
+      - name: English
+        summary: "Working proficiency — 论文写作与阅读"
+
+    Interests:
+      - name: Research
+        icon: fa-solid fa-tag
+        keywords: "数学物理 Mathematical Physics, Lean 4 形式化, 脑启发 AI, 去中心化协议"
