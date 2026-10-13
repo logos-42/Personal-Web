@@ -206,3 +206,64 @@ html[data-theme-setting="light"] {
 #light-toggle:hover .fa-half-sun-moon::after {
   color: var(--global-theme-color);
 }
+
+/* ============================================================
+   Local overrides — system font stack (no external dependency),
+   consistent across light/dark, fixes thin 300-weight legibility.
+   ============================================================ */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Dark-mode contrast fixes: card/table secondary text was a fixed
+   light-grey intended for white cards; brighten it on dark bg. */
+html[data-theme="dark"],
+html[data-theme-setting="dark"] {
+  .card-text,
+  .card .card-text,
+  .news .card-text {
+    color: #b3b8bd;
+  }
+
+  .table,
+  .table td,
+  .table th {
+    color: var(--global-text-color);
+  }
+
+  .card {
+    border: 1px solid #33373d;
+  }
+
+  code,
+  pre {
+    background: #23272c;
+  }
+}
+
+/* Language toggle button — same footprint as #light-toggle */
+#lang-toggle {
+  padding: 0;
+  border: 0;
+  background-color: inherit;
+  color: var(--global-text-color);
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 576px) {
+  #lang-toggle {
+    transform: translateY(4px);
+  }
+}
