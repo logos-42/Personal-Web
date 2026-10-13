@@ -158,7 +158,16 @@
                     apply(document.documentElement.lang === "zh" ? "en" : "zh");
                   });
                 }
-                apply(lang);
+                function init() {
+                  apply(lang);
+                  // re-apply after dynamic content is fully parsed
+                  if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", function () {
+                      apply(document.documentElement.lang);
+                    });
+                  }
+                }
+                init();
               })();
             </script>
           {% endif %}
