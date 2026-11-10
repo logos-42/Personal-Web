@@ -19,3 +19,13 @@ vendor
 # Python bytecode from bin/ helper scripts
 __pycache__/
 *.pyc
+
+# 简历源文件目录：他人模板 PDF、原始大图与本地编译产物不入库
+# 站点只发布编译后的 assets/pdf/resume.pdf
+resume/*.pdf
+resume/肖像.jpg
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.xdv
+resume/*.fls

@@ -239,6 +239,8 @@ exclude:
   - purgecss.config.js
   - README.md
   - readme_preview/
+  # 简历 LaTeX 源文件与第三方模板 PDF 不作为站点内容发布
+  - resume/
   - gems/
   - migrations/
   - vendor
