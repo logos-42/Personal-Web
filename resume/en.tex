@@ -1,0 +1,161 @@
+% 使用 XeLaTeX 编译
+\documentclass[11pt,letterpaper]{article}
+
+% ---------- 基础包 ----------
+\usepackage{ctex} % 中文支持（已包含字体处理）
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+% ---------- 页面设置 ----------
+\geometry{
+  left=1.5cm,
+  right=1.5cm,
+  top=1.5cm,
+  bottom=1.5cm
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% ---------- 标题样式 ----------
+\titleformat{\section}
+{\large\bfseries\raggedright}
+{}{0em}{}
+[\titlerule]
+
+% ---------- 自定义命令 ----------
+\newcommand{\resumeItem}[1]{
+  \item \small #1
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}
+}
+
+% --------------------------------
+\begin{document}
+
+% ---------- 个人信息 ----------
+\begin{center}
+    {\Huge\textbf{刘元杰 (LIU YUANJIE)}} \\[6pt]
+    \textit{多智能体系统 · 去中心化协议 · AI 原型设计} \\[6pt]
+
+    出生：2001年8月29日 $|$ 现居：杭州市 $|$ 微信：vuca335507 \\
+
+    邮箱：
+    \href{mailto:2844169590@qq.com}{2844169590@qq.com} \ $|$ \
+    GitHub:
+    \href{https://github.com/logos-42}{github.com/logos-42}
+\end{center}
+
+% ---------- 教育背景 ----------
+\section{EDUCATION}
+
+\begin{itemize}[leftmargin=0.15in,label={}]
+  \resumeSubheading
+    {天津商业大学}{2020 -- 2024}
+    {自动化信息工程学院 · 自动化与人工智能方向}{学士}
+\end{itemize}
+
+% ---------- 核心能力 ----------
+\section{CORE COMPETENCIES}
+
+\begin{description}[leftmargin=1.6cm,labelsep=0.5cm]
+\item[数学] 线性代数、概率统计、数理逻辑
+\item[计算机] 分布式系统、智能体协议、系统架构设计；Rust, Python, PyTorch
+\item[AI 工具] Claude Code, Cursor, Copilot, Kilo Code；大模型微调与提示词工程
+\item[智能体工程] 智能体编排（Harness）架构设计；多智能体协作协议与任务调度；多智能体系统设计
+
+\end{description}
+
+% ---------- 阶段性成果 ----------
+\section{KEY ACHIEVEMENTS}
+
+\begin{itemize}[leftmargin=0.15in]
+
+\resumeItem{\textbf{学术论文DIAP (arXiv):}
+\href{https://arxiv.org/pdf/2511.11619}{2511.11619}}
+
+\resumeItem{\textbf{Multi-Agent Consensus Mechanisms Based on Causal Fingerprinting}}
+
+\end{itemize}
+
+% ---------- 项目经验 ----------
+\section{PROJECTS}
+
+\begin{itemize}[leftmargin=0.15in,label={}]
+
+\item \textbf{DIAP 智能体协议研究} \ | \
+\emph{多智能体协作, 去中心化协议，预言机智能体}
+
+\begin{itemize}
+\resumeItem{设计去中心化身份机制，通过 CID（身份标签）与 DID（去中心化标识符）绑定实现智能体身份与通信信道的强绑定。}
+\resumeItem{实现去中心化通信模块，智能体间无需中心节点即可完成身份认证与信道建立，保障通信隐私与抗审查性。}
+\resumeItem{提出预言机驱动的信任评估机制，将外部可信数据源引入协议，提升多智能体协作的可靠性。}
+\resumeItem{撰写并发表 DIAP 论文。}
+\end{itemize}
+
+\item \textbf{Twistor 大模型理论研究} \ | \
+\emph{PyTorch, Transformer}
+
+\begin{itemize}
+\resumeItem{探索基于扭量（Twistor）理论的几何代数方法在复数域高维特征表示中的应用，突破传统 Transformer 实数嵌入的限制。}
+\resumeItem{在数学表达能力层面验证了扭量表示的优势，证明其在特定任务上优于标准注意力机制。}
+\resumeItem{使用 PyTorch 实现小规模验证模型，验证理论假设的可行性。}
+\end{itemize}
+
+\item \textbf{导弹测评自动化系统} \ | \
+\emph{AutoGen, Python, 大模型评测}
+
+\begin{itemize}
+\resumeItem{基于 AutoGen 多智能体框架设计并实现自动化武器系统效能评估工具，覆盖指标体系构建、仿真数据处理与结果大模型测评全流程。}
+\resumeItem{设计多智能体协作评测流程，多角色分工完成从指标定义、数据输入到结果输出的自动化链路。}
+\end{itemize}
+
+\item \textbf{去中心化算力调度系统} \ | \
+\emph{Rust}
+
+\begin{itemize}
+\resumeItem{基于 Rust 构建本地化算力调度框架，支持多设备模型参数的同步与聚合。}
+\resumeItem{探索去中心化联邦学习参数传输方案，降低跨设备通信开销。}
+\end{itemize}
+
+\end{itemize}
+% ---------- 经历 ----------
+\section{EXPERIENCE}
+
+\begin{itemize}[leftmargin=0.15in,label={}]
+
+\resumeSubheading
+{GAP · 个人技术探索}{2024.07 -- 2025.08}
+{}{}
+
+\begin{itemize}
+\resumeItem{独立开展 AI 智能体与去中心化协议相关产品与技术探索。}
+\resumeItem{设计并实现多智能体协作原型、代币激励机制与算力调度系统。}
+\resumeItem{负责产品规划、系统架构设计及核心代码实现。}
+\end{itemize}
+
+
+\resumeSubheading
+{浙大滨江研究院 · 人工智能与系统研究方向}{2025.08 -- 2026.03}
+{研究助理 / 研究工程师}{}
+
+\begin{itemize}
+\resumeItem{参与多智能体系统与分布式计算相关课题研究。}
+\resumeItem{负责协议机制建模与仿真实验，完成大模型及智能体性能评估工作。}
+\resumeItem{协助撰写研究报告与技术文档。}
+\end{itemize}
+
+\end{itemize}
+\end{document}
