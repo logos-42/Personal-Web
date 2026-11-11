@@ -17,7 +17,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: mathematical-physics, lean4, formal-verification, multi-agent, DIAP, continual-learning, hi-bs
 lang: zh # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: λ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: omega.svg # 自定义 Omega favicon（SVG 内 x=50 + text-anchor=middle 居中，替代默认左对齐的 emoji）
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
 
 url: https://logos-42.github.io # the base hostname & protocol for your site
