@@ -1,39 +1,33 @@
-% 使用 XeLaTeX 编译
-\documentclass[11pt,letterpaper]{article}
+% English translation of main.tex; same layout, same data.
+% Compile: tectonic -X compile --outdir <output-dir> en.tex (or xelatex en.tex)
+\documentclass[10pt,a4paper]{article}
 
-% ---------- 基础包 ----------
-\usepackage{ctex} % 中文支持（已包含字体处理）
+% ---------- Packages: identical to main.tex for a matching layout ----------
+\usepackage[fontset=fandol]{ctex}
 \usepackage{geometry}
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
-\usepackage{tabularx}
 \usepackage{enumitem}
 \usepackage{xcolor}
+\usepackage{graphicx}
 
-% ---------- 页面设置 ----------
-\geometry{
-  left=1.5cm,
-  right=1.5cm,
-  top=1.5cm,
-  bottom=1.5cm
-}
-
+% ---------- Page setup ----------
+\geometry{left=1.5cm, right=1.5cm, top=1.0cm, bottom=1.0cm}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
+\cfoot{\small\thepage}
 
-% ---------- 标题样式 ----------
-\titleformat{\section}
-{\large\bfseries\raggedright}
-{}{0em}{}
-[\titlerule]
+\definecolor{linkblue}{RGB}{30,80,150}
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue, citecolor=linkblue, pdfborder={0 0 0},
+  pdftitle={Yuanjie Liu - Curriculum Vitae (English)}, pdfauthor={Yuanjie Liu (Leonard)},
+  pdfsubject={Magnetic confinement fusion simulation and AI research systems}}
 
-% ---------- 自定义命令 ----------
-\newcommand{\resumeItem}[1]{
-  \item \small #1
-}
+\titleformat{\section}{\large\bfseries\raggedright}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
 
+\newcommand{\resumeItem}[1]{\item \small #1}
 \newcommand{\resumeSubheading}[4]{
   \item
   \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
@@ -42,120 +36,130 @@
   \end{tabular*}
 }
 
-% --------------------------------
 \begin{document}
 
-% ---------- 个人信息 ----------
+% ---------- Header ----------
+\noindent
+\IfFileExists{portrait.jpg}{%
+\begin{picture}(0,0)
+  \put(442,-84){\includegraphics[width=2.2cm]{portrait.jpg}}
+\end{picture}%
+}{%
+\begin{picture}(0,0)
+  \put(400,-24){\textcolor{red}{\small Missing: portrait.jpg}}
+\end{picture}%
+\typeout{^^J WARNING: portrait.jpg not found - photo skipped.^^J}%
+}
+
 \begin{center}
-    {\Huge\textbf{刘元杰 (LIU YUANJIE)}} \\[6pt]
-    \textit{多智能体系统 · 去中心化协议 · AI 原型设计} \\[6pt]
-
-    出生：2001年8月29日 $|$ 现居：杭州市 $|$ 微信：vuca335507 \\
-
-    邮箱：
-    \href{mailto:2844169590@qq.com}{2844169590@qq.com} \ $|$ \
-    GitHub:
-    \href{https://github.com/logos-42}{github.com/logos-42}
+\begin{minipage}{0.70\textwidth}\centering
+  {\Huge\bfseries Yuanjie Liu (Leonard)}\\[5pt]
+  {\small \href{mailto:2844169590@qq.com}{2844169590@qq.com} $\cdot$ 13115718038 $\cdot$ WeChat: vuca335507 $\cdot$ Hangzhou, China}\\[2pt]
+  {\small \href{https://logos-42.github.io/}{Personal website} $\cdot$ \href{https://github.com/logos-42}{GitHub} $\cdot$ \href{https://orcid.org/0009-0007-4845-641X}{ORCID} $\cdot$ \href{https://arxiv.org/abs/2511.11619}{arXiv} $\cdot$ Available immediately}\\[5pt]
+  {\small\bfseries Objective: Plasma Theory \& Simulation Researcher $|$ Plasma Heating \& Diagnostics Systems Researcher / Engineer}
+\end{minipage}
 \end{center}
+\vspace*{0.15cm}
 
-% ---------- 教育背景 ----------
-\section{EDUCATION}
+% ---------- Education ----------
+\section{Education}
 
-\begin{itemize}[leftmargin=0.15in,label={}]
-  \resumeSubheading
-    {天津商业大学}{2020 -- 2024}
-    {自动化信息工程学院 · 自动化与人工智能方向}{学士}
+\noindent\textbf{Tianjin University of Commerce $\cdot$ School of Automation \& Information Engineering}\hfill\textbf{2020.09 -- 2024.06}\\
+\textit{\small B.Eng.\ in Automation and Artificial Intelligence}
+
+\begin{itemize}[leftmargin=0.15in, topsep=2pt]
+\resumeItem{\textbf{Relevant coursework:} Linear Algebra, Probability \& Statistics, Mathematical Logic, Systems Architecture; self-study in theoretical physics and magnetic confinement fusion fundamentals.}
 \end{itemize}
 
-% ---------- 核心能力 ----------
-\section{CORE COMPETENCIES}
+% ---------- Research profile ----------
+\section{Research Profile}
 
-\begin{description}[leftmargin=1.6cm,labelsep=0.5cm]
-\item[数学] 线性代数、概率统计、数理逻辑
-\item[计算机] 分布式系统、智能体协议、系统架构设计；Rust, Python, PyTorch
-\item[AI 工具] Claude Code, Cursor, Copilot, Kilo Code；大模型微调与提示词工程
-\item[智能体工程] 智能体编排（Harness）架构设计；多智能体协作协议与任务调度；多智能体系统设计
+\begin{itemize}[leftmargin=0.15in, topsep=2pt]
+\resumeItem{Independent researcher working on engineering-oriented magnetic confinement fusion: built HUSHFUSION Forge in Go, an end-to-end electromagnetic coil design loop (vacuum magnetostatics of magnetic-mirror configurations, equal-budget automated search, independent Python cross-check); built fusion-sim in Python / JAX, a fusion simulation workbench (TORAX / Gym-TORAX transport simulation and the gym-$\mu$-FRC control environment); first author of an arXiv preprint (DIAP).}
+\resumeItem{Focused on theoretical modelling and diagnostics data pipelines for coupled magnetic-mirror / stellarator configurations, with strengths in magnetic configuration modelling and optimisation, transport and control simulation, numerical-experiment gating and reproducible validation, engineering implementation (Go / Python / JAX), and preprint / technical writing.}
+\end{itemize}
 
+% ---------- Fusion projects ----------
+\section{Fusion Research Projects}
+
+\begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt]
+
+\item \textbf{HUSHFUSION Forge $\cdot$ End-to-End Electromagnetic Coil Design}\hfill\textit{\small Go, Python (independent cross-check), magnetic mirrors}
+\begin{itemize}[topsep=1pt, label=\textbullet]
+\resumeItem{\textbf{Problem:} Coil design for fusion devices relies on manual iteration; a single experiment yields one design and the design knowledge cannot be reused.}
+\resumeItem{\textbf{Approach:} Built a closed loop ``parametric design $\to$ magnetic-field physics $\to$ objective $\to$ search $\to$ design registry $\to$ design rules''; the field uses closed-form circular-loop solutions (complete elliptic integrals via AGM) cross-validated against an independent segmented Biot--Savart solver; the objective covers field strength, mirror ratio, usable field volume, ripple, cost and constraint penalties; the human baseline is a Helmholtz central cell plus mirror throat (midplane average field 1.0 T).}
+\resumeItem{\textbf{Validation:} Phase 0 equal-budget experiment with 12,001 records (4 methods $\times$ 3 seeds $\times$ 1,000 evaluations, 5.5 s pure computation); machine best score 1.381419 vs.\ human baseline $-0.290571$, $\Delta = +1.672$, winning on 3/3 seeds; with a conductor-clearance constraint ($\geq 0.05\,\mathrm{m}$), $\Delta = +1.2395$ and 7,221/12,001 feasible records; 23 acceptance gates plus cross-language oracle checks.}
+\resumeItem{\textbf{Scope:} v0.1 conclusions are limited to vacuum magnetostatic design; no plasma pressure, diamagnetism, equilibrium or finite $\beta$.}
+\end{itemize}
+
+\item \textbf{fusion-sim $\cdot$ Fusion Digital Simulation Workbench}\hfill\textit{\small Python, JAX, TORAX, Gymnasium}
+\begin{itemize}[topsep=1pt, label=\textbullet]
+\resumeItem{\textbf{Problem:} Verify that existing AI simulation stacks run locally, and determine whether in-house physics models can be cast as trainable, verifiable control problems.}
+\resumeItem{\textbf{Approach:} Track A runs TORAX (differentiable 1-D transport) + Gym-TORAX (Gymnasium control environment) + ITER ramp-up; Track B implements gym-$\mu$-FRC v0 ($\mu$ dynamics TD1--TD21, FRC windows FC11b/FC5b, RMF cost, RL environment); clause-by-clause alignment with Lean 4 formalisation, $\mu\to 0$ limit regression, multi-seed and exhaustive reference-solution comparisons.}
+\resumeItem{\textbf{Validation:} \texttt{make test} gate (5 seeds $\times$ 400 training episodes + controls + exhaustive reference); mutation testing injects defects (ignoring $\eta$ in $\mu$ gives 7 red gates, a one-step offset in \texttt{close\_step} gives 1 red gate), all green after repair; pinned jax/jaxlib 0.4.38, torax 1.0.3, gymtorax 1.0.0.}
+\resumeItem{\textbf{Scope:} No experimental data or fitting; conclusions are conditional on the model, not plant-level simulation.}
+\end{itemize}
+
+\end{itemize}
+
+% ---------- Theory and formal verification ----------
+\section{Theoretical Physics \& Formal Verification}
+
+\begin{itemize}[leftmargin=0.15in, topsep=2pt]
+\resumeItem{\textbf{Theoretical physics:} Self-taught foundations, independent research in mathematical physics and formal methods, resulting in 6 single-author preprints (2026).}
+\resumeItem{\textbf{Lean 4 formalisation:} Machine-checkable proofs in Lean 4 / Mathlib for \href{https://github.com/logos-42/NODS}{NODS} (New Object Discovery System), \href{https://github.com/logos-42/Hibs-Physics}{Hibs-Physics} and \href{https://github.com/logos-42/YangMillsPhysics}{YangMillsPhysics}; zero sorry, zero warnings.}
+\end{itemize}
+
+% ---------- AI research and agent systems ----------
+\section{AI Research Workflows \& Agent Systems}
+
+\begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt]
+\item \textbf{AI research workflows and agent systems}\hfill\textit{\small Go, Rust, TypeScript, Python}
+\begin{itemize}[topsep=1pt, label=\textbullet]
+\resumeItem{Experience in AI research workflow orchestration, multi-agent system design and AI operating systems; implemented a working fully automated multi-agent workflow system in Go covering orchestration and automatic task execution.}
+\resumeItem{Open-source projects: DIAP decentralized agent identity protocol (zero-knowledge proofs + hybrid P2P), bolloon agent resource exchange network, Hib-OS, headless.}
+\resumeItem{Other engineering work: automated simulation-data evaluation tool (Python / AutoGen, metric system and simulation data processing), multi-device parameter synchronisation and compute-scheduling framework (Rust / Python), complex-domain high-dimensional representation validation model (PyTorch).}
+\end{itemize}
+\end{itemize}
+
+% ---------- Experience ----------
+\section{Research \& Professional Experience}
+
+\begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt]
+
+\resumeSubheading{Zhejiang Binjiang Research Institute $\cdot$ AI \& Systems}{2025.08 -- 2026.05}{Research Assistant / Research Engineer}{}
+\begin{itemize}[topsep=1pt, label=\textbullet]
+\resumeItem{Participated in research on multi-agent systems and distributed computing; responsible for protocol mechanism modelling and simulation experiments.}
+\resumeItem{Carried out LLM and agent performance evaluation; designed evaluation pipelines and comparative experiments.}
+\resumeItem{Contributed to research reports and technical documentation.}
+\end{itemize}
+
+\resumeSubheading{GAP $\cdot$ Independent Research and Technical Exploration}{2024.07 -- 2025.08}{}{}
+\begin{itemize}[topsep=1pt, label=\textbullet]
+\resumeItem{Independently explored AI agents and distributed systems; responsible for product planning, system architecture and core implementation.}
+\resumeItem{Designed and implemented multi-agent collaboration prototypes and a compute-scheduling system.}
+\end{itemize}
+
+\end{itemize}
+
+% ---------- Publications ----------
+\section{Publications \& Output}
+
+\begin{itemize}[leftmargin=0.15in, topsep=2pt]
+\resumeItem{\textbf{First-author arXiv preprint (2025):} Yuanjie Liu, Wenpeng Xing, Ye Zhou, Gaowei Chang, Changting Lin, Meng Han. \emph{DIAP: A Decentralized Agent Identity Protocol with Zero-Knowledge Proofs and a Hybrid P2P Stack}. \href{https://arxiv.org/abs/2511.11619}{arXiv:2511.11619}; affiliation: Zhejiang Binjiang Research Institute.}
+\resumeItem{\textbf{Six single-author preprints (2026):} including \emph{Counting, Not Confinement: The Yang--Mills Conjecture in the Flowing-Space Gauge Theory} and \emph{The Sink Is a Flattening}; full list on the \href{https://logos-42.github.io/publications/}{Publications page}.}
+\resumeItem{\textbf{Open source:} \href{https://github.com/logos-42/hushfusion-forge}{hushfusion-forge} (Go), \href{https://github.com/logos-42/fusion-sim}{fusion-sim} (Python), \href{https://github.com/logos-42/NODS}{NODS}, \href{https://github.com/logos-42/bolloon}{bolloon} (4 stars / 3 forks), and more; see \href{https://github.com/logos-42}{GitHub}.}
+\end{itemize}
+
+% ---------- Skills ----------
+\section{Research \& Technical Skills}
+
+\begin{description}[leftmargin=3.4cm, labelsep=0.3cm, topsep=2pt, itemsep=0pt]
+\item[Fusion \& Simulation] Magnetic-mirror coil configuration design and optimisation; vacuum magnetostatics (elliptic integrals / Biot--Savart); TORAX 1-D transport; Gym-TORAX / gym-$\mu$-FRC control environments; FRC windows and RMF cost; equal-budget search and design registries
+\item[Numerical \& Languages] Go, Python, Rust; JAX / Gymnasium; numerical experiment design, equal-budget benchmarks, gating and cross-language oracle validation, reproducible experiment reports
+\item[Math \& Formalisation] Linear algebra, probability and statistics, mathematical logic; theoretical physics (self-taught); Lean 4 / Mathlib machine-checked proofs (zero sorry)
+\item[AI Research Systems] AI research workflows, agent orchestration, multi-agent systems, AI operating systems; agent protocols (DIAP / bolloon)
+\item[Systems \& Collaboration] Distributed systems, multi-device parameter synchronisation, system architecture; English literature review, research reports and preprint writing
 \end{description}
 
-% ---------- 阶段性成果 ----------
-\section{KEY ACHIEVEMENTS}
-
-\begin{itemize}[leftmargin=0.15in]
-
-\resumeItem{\textbf{学术论文DIAP (arXiv):}
-\href{https://arxiv.org/pdf/2511.11619}{2511.11619}}
-
-\resumeItem{\textbf{Multi-Agent Consensus Mechanisms Based on Causal Fingerprinting}}
-
-\end{itemize}
-
-% ---------- 项目经验 ----------
-\section{PROJECTS}
-
-\begin{itemize}[leftmargin=0.15in,label={}]
-
-\item \textbf{DIAP 智能体协议研究} \ | \
-\emph{多智能体协作, 去中心化协议，预言机智能体}
-
-\begin{itemize}
-\resumeItem{设计去中心化身份机制，通过 CID（身份标签）与 DID（去中心化标识符）绑定实现智能体身份与通信信道的强绑定。}
-\resumeItem{实现去中心化通信模块，智能体间无需中心节点即可完成身份认证与信道建立，保障通信隐私与抗审查性。}
-\resumeItem{提出预言机驱动的信任评估机制，将外部可信数据源引入协议，提升多智能体协作的可靠性。}
-\resumeItem{撰写并发表 DIAP 论文。}
-\end{itemize}
-
-\item \textbf{Twistor 大模型理论研究} \ | \
-\emph{PyTorch, Transformer}
-
-\begin{itemize}
-\resumeItem{探索基于扭量（Twistor）理论的几何代数方法在复数域高维特征表示中的应用，突破传统 Transformer 实数嵌入的限制。}
-\resumeItem{在数学表达能力层面验证了扭量表示的优势，证明其在特定任务上优于标准注意力机制。}
-\resumeItem{使用 PyTorch 实现小规模验证模型，验证理论假设的可行性。}
-\end{itemize}
-
-\item \textbf{导弹测评自动化系统} \ | \
-\emph{AutoGen, Python, 大模型评测}
-
-\begin{itemize}
-\resumeItem{基于 AutoGen 多智能体框架设计并实现自动化武器系统效能评估工具，覆盖指标体系构建、仿真数据处理与结果大模型测评全流程。}
-\resumeItem{设计多智能体协作评测流程，多角色分工完成从指标定义、数据输入到结果输出的自动化链路。}
-\end{itemize}
-
-\item \textbf{去中心化算力调度系统} \ | \
-\emph{Rust}
-
-\begin{itemize}
-\resumeItem{基于 Rust 构建本地化算力调度框架，支持多设备模型参数的同步与聚合。}
-\resumeItem{探索去中心化联邦学习参数传输方案，降低跨设备通信开销。}
-\end{itemize}
-
-\end{itemize}
-% ---------- 经历 ----------
-\section{EXPERIENCE}
-
-\begin{itemize}[leftmargin=0.15in,label={}]
-
-\resumeSubheading
-{GAP · 个人技术探索}{2024.07 -- 2025.08}
-{}{}
-
-\begin{itemize}
-\resumeItem{独立开展 AI 智能体与去中心化协议相关产品与技术探索。}
-\resumeItem{设计并实现多智能体协作原型、代币激励机制与算力调度系统。}
-\resumeItem{负责产品规划、系统架构设计及核心代码实现。}
-\end{itemize}
-
-
-\resumeSubheading
-{浙大滨江研究院 · 人工智能与系统研究方向}{2025.08 -- 2026.03}
-{研究助理 / 研究工程师}{}
-
-\begin{itemize}
-\resumeItem{参与多智能体系统与分布式计算相关课题研究。}
-\resumeItem{负责协议机制建模与仿真实验，完成大模型及智能体性能评估工作。}
-\resumeItem{协助撰写研究报告与技术文档。}
-\end{itemize}
-
-\end{itemize}
 \end{document}
