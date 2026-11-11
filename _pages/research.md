@@ -65,7 +65,7 @@ nav_order: 2
 
 ## 其他研究 — Other Research
 
-**持力学性模型（force-sustaining models）。** 对力学性质如何在模型中保持与延续的研究。
+**持续性学习、大模型、JEPA 与可解释性。** 关注模型如何在不遗忘既有能力的前提下持续学习，大模型的表征与行为，JEPA 式自监督预测架构，以及模型内部机制的可解释性。
 
 </div>
 
@@ -127,6 +127,6 @@ nav_order: 2
 
 ## Other Research
 
-**Force-sustaining models (持力学性模型).** On how mechanical properties are sustained and carried within models.
+**Continual learning, LLMs, JEPA, interpretability.** On how models keep learning without forgetting, the representations and behaviour of large language models, JEPA-style self-supervised predictive architectures, and the interpretability of internal model mechanisms.
 
 </div>
