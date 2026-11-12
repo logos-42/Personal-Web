@@ -98,16 +98,14 @@
 \begin{itemize}[topsep=1pt, label=\textbullet]
 \resumeItem{\textbf{问题：}聚变装置线圈设计依赖手工迭代，单次实验只产出一个设计，设计知识无法被后续复用。}
 \resumeItem{\textbf{方法：}构建「参数化设计 $\to$ 磁场物理 $\to$ 目标函数 $\to$ 搜索 $\to$ 设计注册表 $\to$ 设计规则」闭环；磁场用圆环电流闭式解（完全椭圆积分 AGM）与独立分段 Biot--Savart 交叉验证；目标函数含场强、镜比、可用场体积、纹波、造价与约束罚；人工基线为 Helmholtz 中央室 + 镜喉（中场平均场 1.0 T）。}
-\resumeItem{\textbf{验证：}Phase 0 等预算实验 12,001 条记录（4 方法 $\times$ 3 seed $\times$ 1,000 次评估，纯计算 5.5 s）；机器最优 score 1.381419 vs 人工基线 $-0.290571$，$\Delta = +1.672$，3/3 seed 全胜；加入导体净空约束（$\geq 0.05\,\mathrm{m}$）后 $\Delta = +1.2395$、可行记录 7,221/12,001；23 道验收门 + 跨语言 oracle 交叉校验。}
-\resumeItem{\textbf{边界：}v0.1 结论限于真空静磁场设计，不含等离子体压强、抗磁性、平衡与有限 $\beta$。}
+\resumeItem{\textbf{验证：}以等预算对照实验比较多种搜索策略，机器设计在多个随机种子下稳定优于人工基线；通过自动化验收门与跨语言 oracle 交叉校验保证结果可复现。}
 \end{itemize}
 
 \item \textbf{fusion-sim · 聚变数字仿真工作台}\hfill\textit{\small Python, JAX, TORAX, Gymnasium}
 \begin{itemize}[topsep=1pt, label=\textbullet]
 \resumeItem{\textbf{问题：}验证现有 AI 仿真栈的本机可运行性，并判断自研物理模型能否做成可训练、可验证的控制问题。}
 \resumeItem{\textbf{方法：}A 线跑通 TORAX（可微 1-D 输运）+ Gym-TORAX（Gymnasium 控制环境）+ ITER ramp-up；B 线实现 gym-$\mu$-FRC v0（$\mu$ 动力学 TD1--TD21、FRC 窗口 FC11b/FC5b、RMF 代价、RL 环境）；与 Lean 4 形式化逐条对齐、$\mu\to 0$ 极限回归、多 seed 与穷举参考解对照。}
-\resumeItem{\textbf{验证：}\texttt{make test} 门禁（5 seeds $\times$ 400 回合训练 + 对照 + 穷举参考）；门齿测试注入缺陷（$\mu$ 忽略 $\eta$ 得 7 条红，\texttt{close\_step} 偏一步得 1 条红），复原后全绿；钉住 jax/jaxlib 0.4.38、torax 1.0.3、gymtorax 1.0.0。}
-\resumeItem{\textbf{边界：}不含实验数据、不做实验拟合，结论为模型内的条件结论，非电站级仿真。}
+\resumeItem{\textbf{验证：}以自动化门禁覆盖多 seed 训练、对照组与穷举参考解，并用缺陷注入确认门禁能捕捉实现错误；依赖版本固定以保证可复现。}
 \end{itemize}
 
 \end{itemize}

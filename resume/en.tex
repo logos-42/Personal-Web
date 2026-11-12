@@ -88,16 +88,14 @@
 \begin{itemize}[topsep=1pt, label=\textbullet]
 \resumeItem{\textbf{Problem:} Coil design for fusion devices relies on manual iteration; a single experiment yields one design and the design knowledge cannot be reused.}
 \resumeItem{\textbf{Approach:} Built a closed loop ``parametric design $\to$ magnetic-field physics $\to$ objective $\to$ search $\to$ design registry $\to$ design rules''; the field uses closed-form circular-loop solutions (complete elliptic integrals via AGM) cross-validated against an independent segmented Biot--Savart solver; the objective covers field strength, mirror ratio, usable field volume, ripple, cost and constraint penalties; the human baseline is a Helmholtz central cell plus mirror throat (midplane average field 1.0 T).}
-\resumeItem{\textbf{Validation:} Phase 0 equal-budget experiment with 12,001 records (4 methods $\times$ 3 seeds $\times$ 1,000 evaluations, 5.5 s pure computation); machine best score 1.381419 vs.\ human baseline $-0.290571$, $\Delta = +1.672$, winning on 3/3 seeds; with a conductor-clearance constraint ($\geq 0.05\,\mathrm{m}$), $\Delta = +1.2395$ and 7,221/12,001 feasible records; 23 acceptance gates plus cross-language oracle checks.}
-\resumeItem{\textbf{Scope:} v0.1 conclusions are limited to vacuum magnetostatic design; no plasma pressure, diamagnetism, equilibrium or finite $\beta$.}
+\resumeItem{\textbf{Validation:} Equal-budget comparisons show machine-designed configurations consistently outperforming the human baseline across random seeds; automated acceptance gates and cross-language oracle checks keep the results reproducible.}
 \end{itemize}
 
 \item \textbf{fusion-sim $\cdot$ Fusion Digital Simulation Workbench}\hfill\textit{\small Python, JAX, TORAX, Gymnasium}
 \begin{itemize}[topsep=1pt, label=\textbullet]
 \resumeItem{\textbf{Problem:} Verify that existing AI simulation stacks run locally, and determine whether in-house physics models can be cast as trainable, verifiable control problems.}
 \resumeItem{\textbf{Approach:} Track A runs TORAX (differentiable 1-D transport) + Gym-TORAX (Gymnasium control environment) + ITER ramp-up; Track B implements gym-$\mu$-FRC v0 ($\mu$ dynamics TD1--TD21, FRC windows FC11b/FC5b, RMF cost, RL environment); clause-by-clause alignment with Lean 4 formalisation, $\mu\to 0$ limit regression, multi-seed and exhaustive reference-solution comparisons.}
-\resumeItem{\textbf{Validation:} \texttt{make test} gate (5 seeds $\times$ 400 training episodes + controls + exhaustive reference); mutation testing injects defects (ignoring $\eta$ in $\mu$ gives 7 red gates, a one-step offset in \texttt{close\_step} gives 1 red gate), all green after repair; pinned jax/jaxlib 0.4.38, torax 1.0.3, gymtorax 1.0.0.}
-\resumeItem{\textbf{Scope:} No experimental data or fitting; conclusions are conditional on the model, not plant-level simulation.}
+\resumeItem{\textbf{Validation:} An automated test gate covers multi-seed training, controls and exhaustive reference solutions; defect injection confirms the gate catches implementation errors, and dependencies are pinned for reproducibility.}
 \end{itemize}
 
 \end{itemize}
